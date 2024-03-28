@@ -111,22 +111,22 @@ try {
 	
 	//Click View Result Button
 	
-	Mobile.tapAtPosition(584, 1155)
-	Mobile.getText(findTestObject('Object Repository/Search_Property/Reset Filter Button'), 4)
+	Mobile.tapAtPosition(367, 1391)
+			Mobile.getText(findTestObject('Object Repository/Search_Property/Reset Filter Button'), 4)
 	
-} catch (Exception) {
+} catch (Throwable t) {
 	try {
 		Mobile.tapAtPosition(364, 1299)
 		Mobile.getText(findTestObject('Object Repository/Search_Property/Reset Filter Button'), 4)
-	} catch (Exception) {
+	} catch (Throwable t) {
 		try {
 			Mobile.tapAtPosition(367, 1391)
 			Mobile.getText(findTestObject('Object Repository/Search_Property/Reset Filter Button'), 4)
-		} catch (Exception ) {
+		} catch (Throwable t ) {
 			try {
 				Mobile.tapAtPosition(361, 1068)
 				Mobile.getText(findTestObject('Object Repository/Search_Property/Reset Filter Button'), 4)
-			} catch (Exception) {
+			} catch (Throwable t) {
 				
 			}
 		}
