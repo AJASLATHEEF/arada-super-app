@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>Arada Super App Suite_1</name>
+   <name>Suite 2</name>
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient></mailRecipient>
-   <numberOfRerun>2</numberOfRerun>
-   <pageLoadTimeout>40</pageLoadTimeout>
+   <numberOfRerun>3</numberOfRerun>
+   <pageLoadTimeout>30</pageLoadTimeout>
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <rerunImmediately>true</rerunImmediately>
-   <testSuiteGuid>bd3426c9-6a3d-48cf-8e54-3f3593568687</testSuiteGuid>
+   <testSuiteGuid>2da8b190-ed51-4b7b-9965-7f9dbb93f403</testSuiteGuid>
    <testCaseLink>
-      <guid>2192e641-34df-4fd7-88fd-828723878c50</guid>
+      <guid>94a46b66-7111-442b-a519-b0b984882d32</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/TC_001_Seach_Propery</testCaseId>
