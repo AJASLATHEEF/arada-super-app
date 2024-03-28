@@ -110,12 +110,13 @@ WebUI.delay(5)
 try {
 	
 	//Click View Result Button
-	Mobile.tapAtPosition(364, 1299)
+	
+	Mobile.tapAtPosition(584, 1155)
 	Mobile.getText(findTestObject('Object Repository/Search_Property/Reset Filter Button'), 4)
 	
 } catch (Exception e) {
 	try {
-		Mobile.tapAtPosition(584, 1155)
+		Mobile.tapAtPosition(364, 1299)
 		Mobile.getText(findTestObject('Object Repository/Search_Property/Reset Filter Button'), 4)
 	} catch (Exception e1) {
 		try {
