@@ -36,17 +36,5 @@
       <isRun>true</isRun>
       <testCaseId>Test Cases/TC_001_Seach_Propery</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>cd1e2278-0f44-4707-bb2f-64c5d43e4409</variableId>
-      </variableLink>
-      <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
-         <variableId>5dd408f1-19ac-4b2a-a9e4-f981d98bba31</variableId>
-      </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

@@ -9,6 +9,8 @@ import io.appium.java_client.AppiumDriver as AppiumDriver
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import io.appium.java_client.MobileElement as MobileElement
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+
 
 Date todaysDate = new Date()
 
@@ -30,7 +32,7 @@ println('next day is ' + next_day)
 
 println(formattedDate)
 
-Mobile.startApplication('C:\\Users\\ajas\\Downloads\\app-staging-release.apk', true)
+Mobile.startApplication('C:\\Users\\ajas\\Downloads\\app-staging-release.apk', false)
 
 WebUI.delay(25)
 
@@ -38,17 +40,17 @@ Mobile.takeScreenshotAsCheckpoint('Launch Screen')
 
 Mobile.takeScreenshot()
 
-Mobile.sendKeys(findTestObject('Search_Property/Email Text Field'), GlobalVariable.Username)
-
-WebUI.delay(5)
-
-Mobile.sendKeys(findTestObject('Search_Property/Password Text Field'), GlobalVariable.Valid_Password)
-
-Mobile.delay(5)
-
-Mobile.tap(findTestObject('Invalid Password/Login Button'), 0)
-
-Mobile.delay(13)
+//Mobile.sendKeys(findTestObject('Search_Property/Email Text Field'), GlobalVariable.Username)
+//
+//WebUI.delay(5)
+//
+//Mobile.sendKeys(findTestObject('Search_Property/Password Text Field'), GlobalVariable.Valid_Password)
+//
+//Mobile.delay(5)
+//
+//Mobile.tap(findTestObject('Invalid Password/Login Button'), 0)
+//
+//Mobile.delay(13)
 
 Mobile.takeScreenshotAsCheckpoint('After Login')
 
@@ -98,12 +100,14 @@ Mobile.scrollToText('Select Bedroom')
 
 Mobile.tap(findTestObject('Search_Property/Click Bedroom Count 4'), 0)
 
+Mobile.scrollToText('Community Type')
+
 Mobile.scrollToText('View Result')
 
 WebUI.delay(5)
 
 //Click View Result Button
-Mobile.tapAtPosition(367, 1319)
+Mobile.tapAtPosition(364, 1299)
 
 Mobile.delay(5)
 
@@ -119,7 +123,11 @@ Mobile.scrollToText('Book a Visit')
 
 Mobile.switchToNative()
 
-Mobile.tapAtPosition(367, 1353)
+WebUI.delay(5)
+
+Mobile.tapAtPosition(368, 1353) 
+
+//Mobile.tap(findTestObject('Object Repository/Search_Property/Book a Visit button'), 4)
 
 WebUI.delay(8)
 
@@ -136,8 +144,13 @@ if (el.getText().equals(tomorw)) {
 }
 
 Mobile.tap(findTestObject('Search_Property/Click Time'), 0)
+WebUI.delay(5)
+Mobile.switchToNative()
+WebUI.delay(8)
 
-Mobile.tapAtPosition(367, 1353)
+//Mobile.tap(findTestObject('Object Repository/Search_Property/Schedule Button'), 0)
+
+Mobile.tapAtPosition(367, 1353)   
 
 String alert = Mobile.getText(findTestObject('Search_Property/Booking Successful alert message'), 0)
 
