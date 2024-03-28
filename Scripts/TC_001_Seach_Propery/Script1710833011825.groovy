@@ -32,7 +32,7 @@ println('next day is ' + next_day)
 
 println(formattedDate)
 
-Mobile.startApplication('C:\\Users\\ajas\\Downloads\\app-staging-release.apk', false)
+Mobile.startApplication('C:\\Users\\ajas\\Downloads\\app-staging-release.apk', true)
 
 WebUI.delay(25)
 
@@ -40,17 +40,17 @@ Mobile.takeScreenshotAsCheckpoint('Launch Screen')
 
 Mobile.takeScreenshot()
 
-//Mobile.sendKeys(findTestObject('Search_Property/Email Text Field'), GlobalVariable.Username)
-//
-//WebUI.delay(5)
-//
-//Mobile.sendKeys(findTestObject('Search_Property/Password Text Field'), GlobalVariable.Valid_Password)
-//
-//Mobile.delay(5)
-//
-//Mobile.tap(findTestObject('Invalid Password/Login Button'), 0)
-//
-//Mobile.delay(13)
+Mobile.sendKeys(findTestObject('Search_Property/Email Text Field'), GlobalVariable.Username)
+
+WebUI.delay(5)
+
+Mobile.sendKeys(findTestObject('Search_Property/Password Text Field'), GlobalVariable.Valid_Password)
+
+Mobile.delay(5)
+
+Mobile.tap(findTestObject('Invalid Password/Login Button'), 0)
+
+Mobile.delay(13)
 
 Mobile.takeScreenshotAsCheckpoint('After Login')
 
@@ -106,8 +106,33 @@ Mobile.scrollToText('View Result')
 
 WebUI.delay(5)
 
-//Click View Result Button
-Mobile.tapAtPosition(364, 1299)
+
+try {
+	
+	//Click View Result Button
+	Mobile.tapAtPosition(364, 1299)
+	Mobile.getText(findTestObject('Object Repository/Search_Property/Reset Filter Button'), 4)
+	
+} catch (Exception e) {
+	try {
+		Mobile.tapAtPosition(584, 1155)
+		Mobile.getText(findTestObject('Object Repository/Search_Property/Reset Filter Button'), 4)
+	} catch (Exception e1) {
+		try {
+			Mobile.tapAtPosition(367, 1391)
+			Mobile.getText(findTestObject('Object Repository/Search_Property/Reset Filter Button'), 4)
+		} catch (Exception e2) {s
+			try {
+				Mobile.tapAtPosition(361, 1068)
+				Mobile.getText(findTestObject('Object Repository/Search_Property/Reset Filter Button'), 4)
+			} catch (Exception e3) {
+				
+			}
+		}
+	}
+}
+
+
 
 Mobile.delay(5)
 
