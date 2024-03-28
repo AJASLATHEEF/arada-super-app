@@ -122,7 +122,7 @@ try {
 		try {
 			Mobile.tapAtPosition(367, 1391)
 			Mobile.getText(findTestObject('Object Repository/Search_Property/Reset Filter Button'), 4)
-		} catch (Exception e2) {s
+		} catch (Exception e2) {
 			try {
 				Mobile.tapAtPosition(361, 1068)
 				Mobile.getText(findTestObject('Object Repository/Search_Property/Reset Filter Button'), 4)
