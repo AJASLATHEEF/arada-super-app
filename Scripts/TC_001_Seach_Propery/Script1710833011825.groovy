@@ -50,7 +50,7 @@ Mobile.delay(5)
 
 Mobile.tap(findTestObject('Invalid Password/Login Button'), 0)
 
-Mobile.delay(60)
+Mobile.delay(30)
 //
 //Mobile.takeScreenshotAsCheckpoint('After Login')
 //
