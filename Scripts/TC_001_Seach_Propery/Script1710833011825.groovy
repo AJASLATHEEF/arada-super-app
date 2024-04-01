@@ -120,7 +120,7 @@ Mobile.tap(findTestObject('Search_Property/Masaar Tile'), 0)
 //Mobile.takeScreenshot()s
 
 //Click First search result
-Mobile.tap(findTestObject('Search_Property/Click First Search Result'), 0)
+Mobile.tap(findTestObject('Search_Property/Click First Search Result 1'), 0)
 
 //Sroll to 'Book a Visit' buttton
 Mobile.scrollToText('Book a Visit')
