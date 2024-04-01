@@ -47,5 +47,6 @@ if (alert.equals('Invalid username or password')) {
     throw new RuntimeException('Automation stopped because the condition is not satisfied.')
 }
 
+
 Mobile.closeApplication()
 
