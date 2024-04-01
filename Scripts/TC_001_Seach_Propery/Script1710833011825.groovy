@@ -60,7 +60,11 @@ Mobile.delay(13)
 
 Mobile.getText(findTestObject('Search_Property/Welcome title'), 0)
 
+Mobile.delay(10)
+
 Mobile.tap(findTestObject('Search_Property/Explore Property Tile'), 0)
+
+Mobile.delay(10)
 
 Mobile.tap(findTestObject('Search_Property/Sort Icon'), 0)
 
