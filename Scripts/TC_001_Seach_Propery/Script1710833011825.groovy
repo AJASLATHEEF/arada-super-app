@@ -106,62 +106,15 @@ Mobile.scrollToText('Community Type')
 
 Mobile.scrollToText('View Result')
 
-WebUI.delay(5)
-
-
-try {
-	
-	//Click View Result Button
-	Mobile.getText(findTestObject('Object Repository/Search_Property/View Result Button'), 4)
-	Mobile.tapAtPosition(367, 1391)
-    Mobile.getText(findTestObject('Object Repository/Search_Property/Reset Filter Button'), 4)
-	
-    }
-	
-	finally {
-		
-	}
-	
-
-try {
-	
-	//Click View Result Button
-	Mobile.getText(findTestObject('Object Repository/Search_Property/View Result Button'), 4)
-	Mobile.tapAtPosition(364, 1299)
-	Mobile.getText(findTestObject('Object Repository/Search_Property/Reset Filter Button'), 4)
-	
-}
-finally {
-
-}
-
-try {
-	
-	//Click View Result Button
-	Mobile.getText(findTestObject('Object Repository/Search_Property/View Result Button'), 4)
-	Mobile.tapAtPosition(367, 1391)
-	Mobile.getText(findTestObject('Object Repository/Search_Property/Reset Filter Button'), 4)
-	
-}
-
-finally {
-
-}
-
-try {
-	
-	//Click View Result Button
-	Mobile.getText(findTestObject('Object Repository/Search_Property/View Result Button'), 4)
-	Mobile.tapAtPosition(361, 1068)
-	Mobile.getText(findTestObject('Object Repository/Search_Property/Reset Filter Button'), 4)
-	
-}
-finally {
-
-}
-
 Mobile.delay(5)
 
+	
+Mobile.tapAtPosition(367, 1391)
+Mobile.delay(5)
+Mobile.tapAtPosition(364, 1299)
+Mobile.delay(5)
+Mobile.tapAtPosition(367, 1391)
+Mobile.delay(5)
 Mobile.takeScreenshotAsCheckpoint('After Click Search button')
 
 Mobile.takeScreenshot()
