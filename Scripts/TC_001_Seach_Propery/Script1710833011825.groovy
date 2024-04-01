@@ -52,9 +52,9 @@ Mobile.tap(findTestObject('Invalid Password/Login Button'), 0)
 
 Mobile.delay(60)
 //
-Mobile.takeScreenshotAsCheckpoint('After Login')
-
-Mobile.takeScreenshot()
+//Mobile.takeScreenshotAsCheckpoint('After Login')
+//
+//Mobile.takeScreenshot()
 
 Mobile.delay(13)
 
@@ -62,62 +62,62 @@ Mobile.getText(findTestObject('Search_Property/Welcome title'), 0)
 
 Mobile.tap(findTestObject('Search_Property/Explore Property Tile'), 0)
 
-Mobile.tap(findTestObject('Search_Property/Sort Icon'), 0)
-
-Mobile.delay(8)
-
-Mobile.takeScreenshotAsCheckpoint('After Click Sort Icon')
-
-Mobile.takeScreenshot()
-
-Mobile.delay(8)
+//Mobile.tap(findTestObject('Search_Property/Sort Icon'), 0)
+//
+//Mobile.delay(8)
+//
+//Mobile.takeScreenshotAsCheckpoint('After Click Sort Icon')
+//
+//Mobile.takeScreenshot()
+//
+//Mobile.delay(8)
 
 Mobile.tap(findTestObject('Search_Property/Masaar Tile'), 0)
 
-Mobile.delay(8)
-
-Mobile.switchToNative()
-
-Mobile.tap(findTestObject('Search_Property/Select Property Type'), 0)
-
-Mobile.delay(7)
-
-Mobile.switchToNative()
-
-Mobile.tap(findTestObject('Search_Property/Select Cluster Drop'), 0)
-
-Mobile.delay(7)
-
-Mobile.tap(findTestObject('Search_Property/Robinia Cluster Type Drop Value'), 0)
-
-Mobile.delay(7)
-
-Mobile.tap(findTestObject('Search_Property/Select Project Drop'), 0)
-
-Mobile.delay(3)
-
-Mobile.tap(findTestObject('Search_Property/Robinia Project Type Drop Value'), 0)
-
-Mobile.scrollToText('Select Bedroom')
-
-Mobile.tap(findTestObject('Search_Property/Click Bedroom Count 4'), 0)
-
-Mobile.scrollToText('Community Type')
-
-Mobile.scrollToText('View Result')
-
-Mobile.delay(5)
-
-	
-Mobile.tapAtPosition(367, 1391)
-Mobile.delay(5)
-Mobile.tapAtPosition(364, 1299)
-Mobile.delay(5)
-Mobile.tapAtPosition(367, 1391)
-Mobile.delay(5)
-Mobile.takeScreenshotAsCheckpoint('After Click Search button')
-
-Mobile.takeScreenshot()
+//Mobile.delay(8)
+//
+//Mobile.switchToNative()
+//
+//Mobile.tap(findTestObject('Search_Property/Select Property Type'), 0)
+//
+//Mobile.delay(7)
+//
+//Mobile.switchToNative()
+//
+//Mobile.tap(findTestObject('Search_Property/Select Cluster Drop'), 0)
+//
+//Mobile.delay(7)
+//
+//Mobile.tap(findTestObject('Search_Property/Robinia Cluster Type Drop Value'), 0)
+//
+//Mobile.delay(7)
+//
+//Mobile.tap(findTestObject('Search_Property/Select Project Drop'), 0)
+//
+//Mobile.delay(3)
+//
+//Mobile.tap(findTestObject('Search_Property/Robinia Project Type Drop Value'), 0)
+//
+//Mobile.scrollToText('Select Bedroom')
+//
+//Mobile.tap(findTestObject('Search_Property/Click Bedroom Count 4'), 0)
+//
+//Mobile.scrollToText('Community Type')
+//
+//Mobile.scrollToText('View Result')
+//
+//Mobile.delay(5)
+//
+//	
+//Mobile.tapAtPosition(367, 1391)
+//Mobile.delay(5)
+//Mobile.tapAtPosition(364, 1299)
+//Mobile.delay(5)
+//Mobile.tapAtPosition(367, 1391)
+//Mobile.delay(5)
+//Mobile.takeScreenshotAsCheckpoint('After Click Search button')
+//
+//Mobile.takeScreenshot()s
 
 //Click First search result
 Mobile.tap(findTestObject('Search_Property/Click First Search Result'), 0)
