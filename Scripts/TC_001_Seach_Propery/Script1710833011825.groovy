@@ -9,8 +9,22 @@ import io.appium.java_client.AppiumDriver as AppiumDriver
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import io.appium.java_client.MobileElement as MobileElement
-import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.testdata.TestDataFactory
 
+
+ String tomorw
 
 Date todaysDate = new Date()
 
@@ -26,7 +40,14 @@ def gTomorrowDate = localDate.plusDays(1).format(screenFormat)
 
 def next_day = localDate.plusDays(1).format(screenFormat1)
 
-String tomorw = next_day.toString()
+String tomorw1 = next_day.toString()
+
+if (tomorw1.charAt(0) == '0') {
+	// If the first digit contains zero, remove the zero
+	tomorw = tomorw1.substring(1)
+} else {
+	println("First digit does not contain zero")
+}
 
 println('next day is ' + next_day)
 
@@ -110,36 +131,30 @@ Mobile.scrollToText('Community Type')
 
 Mobile.scrollToText('View Result')
 
-Mobile.delay(5)
+Mobile.delay(8)
+
+String bounds = Mobile.getAttribute(findTestObject('Object Repository/Search_Property/View Result Button'), 'bounds', 10)
 
 
-try {
-	Mobile.getText(findTestObject('Object Repository/Search_Property/View Result Button'), 0)
-	Mobile.tapAtPosition(367, 1391)
-	Mobile.delay(5)
-} catch (Exception e) {
-	e.printStackTrace()
-}
+// Extract integers from the string
+List<Integer> integers = bounds.findAll(/\d+/).collect { it as Integer }
 
-try {
-	Mobile.getText(findTestObject('Object Repository/Search_Property/View Result Button'), 0)
-	Mobile.tapAtPosition(364, 1299)
-	Mobile.delay(5)
-} catch (Exception e) {
-	e.printStackTrace()
-}
+// Print the extracted integers
+println("Extracted Integers: " + integers)
 
+String x1 = integers[2]  
+String y1 = integers[-1] 
 
-try {
-	Mobile.getText(findTestObject('Object Repository/Search_Property/View Result Button'), 0)
-	Mobile.tapAtPosition(367, 1391)
-	Mobile.delay(5)
-} catch (Exception e) {
-	e.printStackTrace()
-}
+int x2 = Integer.parseInt(x1)
+int y2 = Integer.parseInt(y1)
 
+int x = x2-79
+int y =y2-18
 
+println('x value is '+x)
+println('y value is '+y)
 
+Mobile.tapAtPosition(364, 1299)
 
 Mobile.takeScreenshotAsCheckpoint('After Click Search button')
 
@@ -155,7 +170,7 @@ Mobile.switchToNative()
 
 WebUI.delay(5)
 
-Mobile.tapAtPosition(368, 1353) 
+Mobile.tapAtPosition(368, 1353)
 
 //Mobile.tap(findTestObject('Object Repository/Search_Property/Book a Visit button'), 4)
 
@@ -165,8 +180,8 @@ Mobile.takeScreenshotAsCheckpoint('Select date')
 
 Mobile.takeScreenshot()
 
-AppiumDriver<?> driver = MobileDriverFactory.getDriver()
 
+AppiumDriver<?> driver = MobileDriverFactory.getDriver()
 MobileElement el = driver.findElement(By.xpath(('//android.widget.TextView[@text=\'' + tomorw) + '\']'))
 
 if (el.getText().equals(tomorw)) {
@@ -174,13 +189,15 @@ if (el.getText().equals(tomorw)) {
 }
 
 Mobile.tap(findTestObject('Search_Property/Click Time'), 0)
+
 WebUI.delay(5)
+
 Mobile.switchToNative()
+
 WebUI.delay(8)
 
 //Mobile.tap(findTestObject('Object Repository/Search_Property/Schedule Button'), 0)
-
-Mobile.tapAtPosition(367, 1353)   
+Mobile.tapAtPosition(367, 1353)
 
 String alert = Mobile.getText(findTestObject('Search_Property/Booking Successful alert message'), 0)
 
@@ -196,4 +213,6 @@ if (alert.contains(gTomorrowDate)) {
 }
 
 Mobile.closeApplication()
+
+
 
