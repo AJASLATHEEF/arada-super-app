@@ -43,7 +43,7 @@ def next_day = localDate.plusDays(1).format(screenFormat1)
 String tomorw1 = next_day.toString()
 
 if (tomorw1.charAt(0) == '0') {
-	// If the first digit contains zero, remove the zero
+	// If the first digit contains zero, remove the zer0s
 	tomorw = tomorw1.substring(1)
 } else {
 	println("First digit does not contain zero")
