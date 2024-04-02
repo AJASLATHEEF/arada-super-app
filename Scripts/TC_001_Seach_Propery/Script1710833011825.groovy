@@ -53,29 +53,29 @@ println('next day is ' + next_day)
 
 println(formattedDate)
 
-Mobile.startApplication('C:\\Users\\ajas\\Downloads\\app-staging-release.apk', true)
+Mobile.startApplication('C:\\Users\\ajas\\Downloads\\app-staging-release.apk', false)
 
 WebUI.delay(25)
 
 Mobile.takeScreenshotAsCheckpoint('Launch Screen')
 
-Mobile.takeScreenshot()
-
-Mobile.sendKeys(findTestObject('Search_Property/Email Text Field'), GlobalVariable.Username)
-
-WebUI.delay(5)
-
-Mobile.sendKeys(findTestObject('Search_Property/Password Text Field'), GlobalVariable.Valid_Password)
-
-Mobile.delay(5)
-
-Mobile.tap(findTestObject('Invalid Password/Login Button'), 0)
-
-Mobile.delay(30)
-
-Mobile.takeScreenshotAsCheckpoint('After Login')
-
-Mobile.takeScreenshot()
+//Mobile.takeScreenshot()
+//
+//Mobile.sendKeys(findTestObject('Search_Property/Email Text Field'), GlobalVariable.Username)
+//
+//WebUI.delay(5)
+//
+//Mobile.sendKeys(findTestObject('Search_Property/Password Text Field'), GlobalVariable.Valid_Password)
+//
+//Mobile.delay(5)
+//
+//Mobile.tap(findTestObject('Invalid Password/Login Button'), 0)
+//
+//Mobile.delay(30)
+//
+//Mobile.takeScreenshotAsCheckpoint('After Login')
+//
+//Mobile.takeScreenshot()
 
 Mobile.delay(13)
 
@@ -97,7 +97,7 @@ Mobile.takeScreenshot()
 
 Mobile.delay(8)
 
-Mobile.tap(findTestObject('Search_Property/Masaar Tile'), 0)
+Mobile.tap(findTestObject('Search_Property/Masaar Tile'), 5)
 
 Mobile.delay(8)
 
@@ -154,7 +154,7 @@ int y =y2-18
 println('x value is '+x)
 println('y value is '+y)
 
-Mobile.tapAtPosition(364, 1299)
+Mobile.tapAtPosition(x, y)
 
 Mobile.takeScreenshotAsCheckpoint('After Click Search button')
 
