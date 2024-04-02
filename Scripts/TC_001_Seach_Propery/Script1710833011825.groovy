@@ -59,23 +59,23 @@ WebUI.delay(25)
 
 Mobile.takeScreenshotAsCheckpoint('Launch Screen')
 
-//Mobile.takeScreenshot()
-//
-//Mobile.sendKeys(findTestObject('Search_Property/Email Text Field'), GlobalVariable.Username)
-//
-//WebUI.delay(5)
-//
-//Mobile.sendKeys(findTestObject('Search_Property/Password Text Field'), GlobalVariable.Valid_Password)
-//
-//Mobile.delay(5)
-//
-//Mobile.tap(findTestObject('Invalid Password/Login Button'), 0)
-//
-//Mobile.delay(30)
-//
-//Mobile.takeScreenshotAsCheckpoint('After Login')
-//
-//Mobile.takeScreenshot()
+Mobile.takeScreenshot()
+
+Mobile.sendKeys(findTestObject('Search_Property/Email Text Field'), GlobalVariable.Username)
+
+WebUI.delay(5)
+
+Mobile.sendKeys(findTestObject('Search_Property/Password Text Field'), GlobalVariable.Valid_Password)
+
+Mobile.delay(5)
+
+Mobile.tap(findTestObject('Invalid Password/Login Button'), 0)
+
+Mobile.delay(30)
+
+Mobile.takeScreenshotAsCheckpoint('After Login')
+
+Mobile.takeScreenshot()
 
 Mobile.delay(13)
 
