@@ -26,19 +26,25 @@ Mobile.takeScreenshotAsCheckpoint('Launch Screen')
 
 Mobile.takeScreenshot()
 
+//Enter username
 Mobile.sendKeys(findTestObject('Invalid Password/Email Text Field'), GlobalVariable.Username)
-
+//Enter invalid password
 Mobile.sendKeys(findTestObject('Invalid Password/Password Field'), GlobalVariable.InValid)
 
 Mobile.delay(5)
 
+//click login button
 Mobile.tap(findTestObject('Invalid Password/Login Button'), 0)
 
+
+//Get alert message
 String alert = Mobile.getText(findTestObject('Invalid Password/Invalid Alert Message'), 0)
 
 Mobile.takeScreenshot()
 
 Mobile.takeScreenshotAsCheckpoint('Alert Screen')
+
+//Verify alert message
 
 if (alert.equals('Invalid username or password')) {
     println('Error is matching' // Log a failure message and stop the execution

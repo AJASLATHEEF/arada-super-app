@@ -30,6 +30,7 @@ Date todaysDate = new Date()
 
 def formattedDate = todaysDate.format('yyyy/MM/dd')
 
+//Fetch current date
 DateTimeFormatter screenFormat = DateTimeFormatter.ofPattern('yyyy/MM/dd')
 
 DateTimeFormatter screenFormat1 = DateTimeFormatter.ofPattern('dd')
@@ -47,15 +48,16 @@ if (tomorw1.charAt(0) == '0') {
 	tomorw = tomorw1.substring(1)
 } else {
 	println("First digit does not contain zero")
+	tomorw = tomorw1
 }
 
-println('next day is ' + next_day)
+println('next day is ' + tomorw)
 
 println(formattedDate)
 
-Mobile.startApplication('C:\\Users\\ajas\\Downloads\\app-staging-release.apk', false)
+Mobile.startApplication('C:\\Users\\ajas\\Downloads\\app-staging-release.apk', true)
 
-WebUI.delay(25)
+WebUI.delay(30)
 
 Mobile.takeScreenshotAsCheckpoint('Launch Screen')
 
