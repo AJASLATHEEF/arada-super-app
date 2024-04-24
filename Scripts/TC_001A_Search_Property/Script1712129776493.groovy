@@ -147,7 +147,7 @@ Mobile.takeScreenshotAsCheckpoint('After Schedule button click')
 
 Mobile.takeScreenshot()
 
-if (alert.contains(gTomorrowDate)) {
+if (alert.contains(gTomorrowDate)&& alert.contains("10:00")) {
     println('Alert message is matching' // Log a failure message and stop the execution
         )
 } else {
