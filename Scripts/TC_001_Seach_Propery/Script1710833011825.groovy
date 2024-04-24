@@ -53,7 +53,7 @@ println('next day is ' + next_day)
 
 println(formattedDate)
 
-Mobile.startApplication('C:\\Users\\ajas\\Downloads\\app-staging-release.apk', false)
+Mobile.startApplication('C:\\Users\\ajas\\Downloads\\app-staging-release.apk', true)
 
 WebUI.delay(25)
 

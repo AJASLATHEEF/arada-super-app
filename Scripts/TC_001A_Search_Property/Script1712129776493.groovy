@@ -134,7 +134,7 @@ Mobile.delay(8)
 //Click schedule button
 Mobile.tap(findTestObject('Object Repository/Search_Property/Schedule Button'), 0)
 
-Mobile.delay(8)
+Mobile.delay(10)
 
 String alert = Mobile.getText(findTestObject('Search_Property/Booking Successful alert message'), 0)
 
