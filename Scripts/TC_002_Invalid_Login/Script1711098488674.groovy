@@ -31,7 +31,7 @@ Mobile.sendKeys(findTestObject('Invalid Password/Email Text Field'), GlobalVaria
 //Enter invalid password
 Mobile.sendKeys(findTestObject('Invalid Password/Password Field'), GlobalVariable.InValid)
 
-Mobile.delay(5)
+Mobile.delay(10)
 
 //click login button
 Mobile.tap(findTestObject('Invalid Password/Login Button'), 0)
@@ -50,7 +50,7 @@ if (alert.equals('Invalid username or password')) {
     println('Error is matching' // Log a failure message and stop the execution
         )
 } else {
-    throw new RuntimeException('Automation stopped because the condition is not satisfied.')
+    throw new RuntimeException('Alert message is not matching')
 }
 
 

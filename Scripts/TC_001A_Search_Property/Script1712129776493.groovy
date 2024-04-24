@@ -114,6 +114,8 @@ Mobile.takeScreenshotAsCheckpoint('Select date')
 
 Mobile.takeScreenshot()
 
+Mobile.delay(15)
+
 
 AppiumDriver<?> driver = MobileDriverFactory.getDriver()
 MobileElement el = driver.findElement(By.xpath(('//android.widget.TextView[@text=\'' + tomorw) + '\']'))
@@ -122,6 +124,9 @@ if (el.getText().equals(tomorw)) {
     el.click()
 }
 
+
+Mobile.delay(15)
+
 //Click time
 Mobile.tap(findTestObject('Search_Property/Click Time'), 0)
 
@@ -129,12 +134,12 @@ WebUI.delay(5)
 
 Mobile.switchToNative()
 
-Mobile.delay(8)
+Mobile.delay(10)
 
 //Click schedule button
 Mobile.tap(findTestObject('Object Repository/Search_Property/Schedule Button'), 0)
 
-Mobile.delay(10)
+Mobile.delay(20)
 
 String alert = Mobile.getText(findTestObject('Search_Property/Booking Successful alert message'), 0)
 
