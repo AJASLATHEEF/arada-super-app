@@ -4,7 +4,9 @@ import com.kms.katalon.core.mobile.keyword.internal.MobileDriverFactory as Mobil
 import java.time.LocalDate as LocalDate
 import java.time.LocalDateTime as LocalDateTime
 import java.time.format.DateTimeFormatter as DateTimeFormatter
-import org.openqa.selenium.By as By
+import org.openqa.selenium.By
+import org.openqa.selenium.WebElement
+
 import io.appium.java_client.AppiumDriver as AppiumDriver
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
@@ -55,7 +57,7 @@ println('next day is ' + tomorw)
 
 println(formattedDate)
 
-Mobile.startApplication('C:\\Users\\ajas\\Downloads\\app-staging-release.apk', true)
+Mobile.startApplication('C:\\Users\\ajas\\Downloads\\app-staging-release.apk', false)
 
 WebUI.delay(30)
 
@@ -128,7 +130,23 @@ if (el.getText().equals(tomorw)) {
 Mobile.delay(15)
 
 //Click time
-Mobile.tap(findTestObject('Search_Property/Click Time'), 0)
+
+List<MobileElement> times = driver.findElements(By.xpath(("//android.widget.TextView[@text='Pick a time']/following-sibling::android.view.ViewGroup")))
+
+int time = times.size()
+
+Random random = new Random()
+int randomNumber = random.nextInt(time-1)
+
+
+   String Selected_date= times.get(randomNumber).getText()
+	times.get(randomNumber).click()
+
+
+
+
+
+//Mobile.tap(findTestObject('Search_Property/Click Time'), 0)
 
 WebUI.delay(5)
 
@@ -147,7 +165,7 @@ Mobile.takeScreenshotAsCheckpoint('After Schedule button click')
 
 Mobile.takeScreenshot()
 
-if (alert.contains(gTomorrowDate)&& alert.contains("10:00")) {
+if (alert.contains(gTomorrowDate)&& alert.contains(Selected_date)) {
     println('Alert message is matching' // Log a failure message and stop the execution
         )
 } else {
