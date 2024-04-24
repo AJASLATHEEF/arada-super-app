@@ -84,7 +84,7 @@ Mobile.takeScreenshotAsCheckpoint('After Login')
 
 Mobile.takeScreenshot()
 
-Mobile.delay(13)
+Mobile.delay(20)
 
 Mobile.getText(findTestObject('Search_Property/Welcome title'), 0)
 
