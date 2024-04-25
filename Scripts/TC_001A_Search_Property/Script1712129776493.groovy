@@ -26,7 +26,7 @@ import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.testdata.TestDataFactory
 
 
- String tomorw
+String tomorw
 
 Date todaysDate = new Date()
 
@@ -57,7 +57,7 @@ println('next day is ' + tomorw)
 
 println(formattedDate)
 
-Mobile.startApplication('C:\\Users\\ajas\\Downloads\\app-staging-release.apk', false)
+Mobile.startApplication('C:\\Users\\ajas\\Downloads\\app-staging-release.apk', true)
 
 WebUI.delay(30)
 
@@ -118,7 +118,6 @@ Mobile.takeScreenshot()
 
 Mobile.delay(15)
 
-
 AppiumDriver<?> driver = MobileDriverFactory.getDriver()
 MobileElement el = driver.findElement(By.xpath(('//android.widget.TextView[@text=\'' + tomorw) + '\']'))
 
@@ -138,15 +137,8 @@ int time = times.size()
 Random random = new Random()
 int randomNumber = random.nextInt(time-1)
 
-
-   String Selected_date= times.get(randomNumber).getText()
-	times.get(randomNumber).click()
-
-
-
-
-
-//Mobile.tap(findTestObject('Search_Property/Click Time'), 0)
+String Selected_date= times.get(randomNumber).getText()
+times.get(randomNumber).click()
 
 WebUI.delay(5)
 
