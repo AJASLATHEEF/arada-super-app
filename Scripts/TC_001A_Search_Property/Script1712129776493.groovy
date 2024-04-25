@@ -98,7 +98,7 @@ Mobile.takeScreenshotAsCheckpoint('After Click on the Explore Property')
 Mobile.takeScreenshot()
 
 Mobile.tap(findTestObject('Search_Property/Masaar Tile'), 5)
-
+Mobile.delay(15)
 Mobile.takeScreenshotAsCheckpoint('After click on the Masaar Property')
 Mobile.takeScreenshot()
 Mobile.delay(5)
