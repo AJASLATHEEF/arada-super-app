@@ -84,11 +84,11 @@ Mobile.takeScreenshotAsCheckpoint('After Login')
 
 Mobile.takeScreenshot()
 
-Mobile.delay(5)
+Mobile.delay(10)
 
 Mobile.getText(findTestObject('Search_Property/Welcome title'), 0)
 
-Mobile.delay(8)
+Mobile.delay(10)
 
 Mobile.tap(findTestObject('Search_Property/Explore Property Tile'), 0)
 
