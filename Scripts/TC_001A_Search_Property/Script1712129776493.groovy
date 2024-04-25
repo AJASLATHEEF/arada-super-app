@@ -59,7 +59,7 @@ println(formattedDate)
 
 Mobile.startApplication('C:\\Users\\ajas\\Downloads\\app-staging-release.apk', true)
 
-WebUI.delay(30)
+WebUI.delay(25)
 
 Mobile.takeScreenshotAsCheckpoint('Launch Screen')
 
@@ -78,26 +78,37 @@ Mobile.delay(5)
 //Click login Button
 Mobile.tap(findTestObject('Invalid Password/Login Button'), 0)
 
-Mobile.delay(30)
+Mobile.delay(25)
 
 Mobile.takeScreenshotAsCheckpoint('After Login')
 
 Mobile.takeScreenshot()
 
-Mobile.delay(20)
+Mobile.delay(5)
 
 Mobile.getText(findTestObject('Search_Property/Welcome title'), 0)
 
-Mobile.delay(10)
+Mobile.delay(8)
 
 Mobile.tap(findTestObject('Search_Property/Explore Property Tile'), 0)
 
 Mobile.delay(10)
 
+Mobile.takeScreenshotAsCheckpoint('After Click on the Explore Property')
+Mobile.takeScreenshot()
+
 Mobile.tap(findTestObject('Search_Property/Masaar Tile'), 5)
 
+Mobile.takeScreenshotAsCheckpoint('After click on the Masaar Property')
+Mobile.takeScreenshot()
+Mobile.delay(5)
 //Click First search result
 Mobile.tap(findTestObject('Search_Property/Click First Search Result 1'), 0)
+
+Mobile.delay(10)
+Mobile.takeScreenshotAsCheckpoint('After click on the first result')
+Mobile.takeScreenshot()
+
 
 //Sroll to 'Book a Visit' buttton
 Mobile.scrollToText('Book a Visit')
@@ -113,7 +124,6 @@ WebUI.delay(8)
 
 //Select visit date
 Mobile.takeScreenshotAsCheckpoint('Select date')
-
 Mobile.takeScreenshot()
 
 Mobile.delay(15)
@@ -139,6 +149,11 @@ int randomNumber = random.nextInt(time-1)
 
 String Selected_date= times.get(randomNumber).getText()
 times.get(randomNumber).click()
+
+Mobile.delay(10)
+
+Mobile.takeScreenshotAsCheckpoint('After time select')
+Mobile.takeScreenshot()
 
 WebUI.delay(5)
 
