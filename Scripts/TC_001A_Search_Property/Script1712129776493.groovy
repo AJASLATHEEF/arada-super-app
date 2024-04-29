@@ -27,6 +27,7 @@ import com.kms.katalon.core.testdata.TestDataFactory
 
 
 String tomorw
+def gTomorrowDate
 
 Date todaysDate = new Date()
 
@@ -36,14 +37,24 @@ def formattedDate = todaysDate.format('yyyy/MM/dd')
 DateTimeFormatter screenFormat = DateTimeFormatter.ofPattern('yyyy/MM/dd')
 
 DateTimeFormatter screenFormat1 = DateTimeFormatter.ofPattern('dd')
+DateTimeFormatter Month1 = DateTimeFormatter.ofPattern('MM')
+DateTimeFormatter year1 = DateTimeFormatter.ofPattern('yyyy')
+
+
+String month = Month1.toString();
+String year = year1.toString();
 
 LocalDate localDate = LocalDate.now()
-
-def gTomorrowDate = localDate.plusDays(1).format(screenFormat)
+String next_month_day = '2'
 
 def next_day = localDate.plusDays(1).format(screenFormat1)
 
 String tomorw1 = next_day.toString()
+
+int today1 = Integer.parseInt(tomorw1)
+int today2 = today1-1
+String today = today2.toString()
+println('Today is '+today)
 
 if (tomorw1.charAt(0) == '0') {
 	// If the first digit contains zero, remove the zero
@@ -92,7 +103,7 @@ Mobile.delay(10)
 
 Mobile.tap(findTestObject('Search_Property/Explore Property Tile'), 0)
 
-Mobile.delay(10)
+Mobile.delay(20)
 
 Mobile.takeScreenshotAsCheckpoint('After Click on the Explore Property')
 Mobile.takeScreenshot()
@@ -126,17 +137,42 @@ WebUI.delay(8)
 Mobile.takeScreenshotAsCheckpoint('Select date')
 Mobile.takeScreenshot()
 
-Mobile.delay(15)
+Mobile.delay(16)
 
 AppiumDriver<?> driver = MobileDriverFactory.getDriver()
-MobileElement el = driver.findElement(By.xpath(('//android.widget.TextView[@text=\'' + tomorw) + '\']'))
 
-if (el.getText().equals(tomorw)) {
-    el.click()
+if (today.contains('29')||today.contains('31')) {
+	
+	Mobile.tap(findTestObject('Object Repository/Search_Property/Next_month'), 10)
+	
+	MobileElement el = driver.findElement(By.xpath(('//android.widget.TextView[@text=\'' + next_month_day) + '\']'))
+	el.click()
+	
+   // Get the current date
+   LocalDate currentDate = LocalDate.now()
+
+   // Get the next month
+   LocalDate nextMonth = currentDate.plusMonths(1)
+
+   // Format the next month and year in 'MM-yyyy' format
+   String nextMonthAndYear = nextMonth.format(DateTimeFormatter.ofPattern("yyyy/MM"))
+
+   println("Next month and year in 'MM-yyyy' format: " + nextMonthAndYear)
+	
+	gTomorrowDate = nextMonthAndYear+'/02'
+	println('next month day'+gTomorrowDate)
+	
 }
 
-
-Mobile.delay(15)
+else {
+	
+	gTomorrowDate = localDate.plusDays(1).format(screenFormat)
+	MobileElement el = driver.findElement(By.xpath(('//android.widget.TextView[@text=\'' + tomorw) + '\']'))
+	
+	if (el.getText().equals(tomorw)) {
+		el.click()
+	}
+}
 
 //Click time
 
@@ -153,13 +189,9 @@ times.get(randomNumber).click()
 Mobile.delay(10)
 
 Mobile.takeScreenshotAsCheckpoint('After time select')
+
 Mobile.takeScreenshot()
-
-WebUI.delay(5)
-
-Mobile.switchToNative()
-
-Mobile.delay(10)
+Mobile.delay(5)
 
 //Click schedule button
 Mobile.tap(findTestObject('Object Repository/Search_Property/Schedule Button'), 0)
