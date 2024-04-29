@@ -141,7 +141,7 @@ Mobile.delay(16)
 
 AppiumDriver<?> driver = MobileDriverFactory.getDriver()
 
-if (today.contains('29')||today.contains('31')) {
+if (today.contains('30')||today.contains('31')) {
 	
 	Mobile.tap(findTestObject('Object Repository/Search_Property/Next_month'), 10)
 	
