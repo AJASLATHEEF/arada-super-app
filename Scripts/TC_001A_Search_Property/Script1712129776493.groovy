@@ -166,8 +166,13 @@ if (today.contains('30')||today.contains('31')) {
 
 else {
 	
+	
 	gTomorrowDate = localDate.plusDays(1).format(screenFormat)
+	Mobile.delay(5)
+	Mobile.takeScreenshot()
+    Mobile.delay(5)
 	MobileElement el = driver.findElement(By.xpath(('//android.widget.TextView[@text=\'' + tomorw) + '\']'))
+	
 	
 	if (el.getText().equals(tomorw)) {
 		el.click()

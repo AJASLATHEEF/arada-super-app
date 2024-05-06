@@ -37,7 +37,7 @@ Mobile.delay(10)
 Mobile.tap(findTestObject('Invalid Password/Login Button'), 0)
 
 
-Mobile.delay(25)
+Mobile.delay(20)
 
 //Get alert message
 String alert = Mobile.getText(findTestObject('Invalid Password/Invalid Alert Message'), 0)
